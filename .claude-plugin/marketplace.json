@@ -1,0 +1,11 @@
+{
+  "name": "test-engineering-marketplace",
+  "owner": { "name": "Nykyta Drobyshevskyi" },
+  "plugins": [
+    {
+      "name": "test-engineering",
+      "source": "./plugin",
+      "description": "Agentic test engineering system: test-setup, test-plan and implement-tests workflows with enforced tool isolation."
+    }
+  ]
+}

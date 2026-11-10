@@ -1,0 +1,7 @@
+{
+  "name": "test-engineering",
+  "version": "0.1.0",
+  "description": "Risk-based test planning, implementation and independent review with enforced least-privilege agents, bounded loops and human approval gates. Language-agnostic.",
+  "author": { "name": "Nykyta Drobyshevskyi" },
+  "keywords": ["testing", "test-plan", "agents", "least-privilege", "quality"]
+}

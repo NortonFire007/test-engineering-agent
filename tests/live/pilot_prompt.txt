@@ -1,0 +1,12 @@
+Use the Skill tool to invoke test-engineering:test-plan and follow it exactly for this request:
+
+Plan tests for the security module of the API: services/api/src/core/security (JWT handling, password hashing and anything else in that package). Planning only; do not implement.
+
+This is an unattended pilot, the human is not available interactively, so do NOT call AskUserQuestion. The human's pre-recorded answers are:
+- Scope question: the package services/api/src/core/security only; its callers are out of scope.
+- Strategy gate: mode 'standard'; approve only the levels the explorer recommends, restricted to 'unit' and 'integration' (never end_to_end).
+- Plan approval: NOT given. Stop after 'TE render plan' once the run is in phase awaiting_plan_approval. Do not run 'plan approve'.
+
+Note: .test-engineering/conventions.md does not exist in this copy; tell specialists to derive conventions from the existing tests instead.
+
+Finish with a factual summary: run id, phases reached, each specialist spawned and how many times, any policy denials or CLI errors you hit (verbatim), review verdict, counts of cases by level and priority, open questions, and the path of test-plan.md.

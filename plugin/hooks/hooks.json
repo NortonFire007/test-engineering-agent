@@ -1,0 +1,31 @@
+{
+  "description": "Mandatory per-call policy for the test-engineering workflow. Exec form (no shell) so the same definition runs on Windows, macOS and Linux. Fails closed.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv",
+            "args": ["run", "--no-project", "--python", ">=3.11", "${CLAUDE_PLUGIN_ROOT}/scripts/hook.py", "pre-tool-use"],
+            "timeout": 30,
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv",
+            "args": ["run", "--no-project", "--python", ">=3.11", "${CLAUDE_PLUGIN_ROOT}/scripts/hook.py", "subagent-stop"],
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

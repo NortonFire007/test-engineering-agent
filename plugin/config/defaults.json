@@ -1,0 +1,46 @@
+{
+  "policy_version": "1",
+  "default_mode": "standard",
+  "models": {
+    "explorer": "haiku",
+    "analyst": "sonnet",
+    "reviewer": "sonnet",
+    "engineer": "haiku",
+    "engineer_escalated": "sonnet"
+  },
+  "modes": {
+    "quick": {
+      "description": "Small, low-risk change. No plan review, one implementation review, unit level only.",
+      "plan_review": false,
+      "plan_revision_cycles": 0,
+      "impl_correction_cycles": 1,
+      "mutation": false,
+      "levels": ["unit"]
+    },
+    "standard": {
+      "description": "Default. Full cycle with one revision cycle for the plan and one for the implementation.",
+      "plan_review": true,
+      "plan_revision_cycles": 1,
+      "impl_correction_cycles": 1,
+      "mutation": false,
+      "levels": null
+    },
+    "deep": {
+      "description": "High-risk logic. Two revision cycles each, plus a controlled mutation check for P0/P1 cases.",
+      "plan_review": true,
+      "plan_revision_cycles": 2,
+      "impl_correction_cycles": 2,
+      "mutation": true,
+      "levels": null
+    }
+  },
+  "limits": {
+    "transient_retries": 2,
+    "output_repairs": 1,
+    "flaky_reruns": 1,
+    "exec_calls": 40,
+    "explorer_spawns": 2,
+    "max_mutations": 12,
+    "run_max_age_hours": 12
+  }
+}
